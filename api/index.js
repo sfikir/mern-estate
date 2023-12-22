@@ -7,6 +7,7 @@ dotenv.config();
 
 // connect with database
 
+
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
@@ -18,7 +19,7 @@ mongoose
 
 
 const app = express();
-
+app.use(express.json());
 
 app.listen(3000, () => {
   console.log("Server is running at post 3000 !!");
@@ -28,3 +29,4 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRouter);
 app.use('/api/auth', authRouter);
+
