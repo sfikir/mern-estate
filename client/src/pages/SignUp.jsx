@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -13,10 +14,10 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/auth/signup", {
+    const res = await fetch ('/api/auth/signup', {
       method: "POST",
       headers: {
-        "Content-Type": "application.json",
+        "Content-Type": "application/json"                                                              
       },
       body: JSON.stringify(formData),
     });
